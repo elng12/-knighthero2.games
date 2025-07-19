@@ -1,291 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Knight Hero 2 Revenge - Play Free Online Idle RPG Game</title>
-  <meta name="description" content="Play Knight Hero 2 Revenge, an epic idle RPG adventure game online for free. Battle enemies, upgrade your knight, and embark on a legendary quest for revenge.">
-  <link rel="canonical" href="https://knighthero2.games/">
-  <style>
-    :root {
-      --apple-blue: #007AFF;
-      --apple-gray: #8E8E93;
-      --apple-light-gray: #F2F2F7;
-      --apple-dark: #1C1C1E;
-      --apple-green: #34C759;
-      --apple-orange: #FF9500;
-      --apple-red: #FF3B30;
-    }
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      background: var(--apple-light-gray);
-      color: var(--apple-dark);
-      min-height: 100vh;
-    }
-    header {
-      background: #fff;
-      border-bottom: 1px solid #e5e7eb;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 2rem;
-      height: 64px;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    .logo {
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--apple-dark);
-      letter-spacing: 1px;
-    }
-    nav a {
-      color: var(--apple-gray);
-      text-decoration: none;
-      margin-left: 2rem;
-      font-size: 1.1rem;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-    nav a.active, nav a:hover {
-      color: var(--apple-blue);
-    }
-    .hero {
-      background: linear-gradient(135deg, var(--apple-blue) 0%, #2196f3 100%);
-      color: #fff;
-      text-align: center;
-      padding: 3.5rem 1rem 3rem 1rem;
-    }
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      margin-bottom: 1rem;
-      letter-spacing: 1px;
-    }
-    .hero p {
-      font-size: 1.3rem;
-      margin-bottom: 2rem;
-      color: #e3eafc;
-    }
-    .hero .play-btn {
-      background: #fff;
-      color: var(--apple-blue);
-      font-size: 1.2rem;
-      font-weight: 700;
-      border: none;
-      border-radius: 2rem;
-      padding: 0.9rem 2.2rem;
-      cursor: pointer;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      transition: background 0.2s, color 0.2s;
-    }
-    .hero .play-btn:hover {
-      background: var(--apple-blue);
-      color: #fff;
-    }
-    .main-content {
-      max-width: 900px;
-      margin: 2.5rem auto 0 auto;
-      background: #fff;
-      border-radius: 18px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
-      padding: 2rem 1.2rem;
-    }
-    .iframe-wrap {
-      position: relative;
-      width: 100%;
-      padding-bottom: 56.25%;
-      margin-bottom: 2rem;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-      background: #000;
-    }
-    .iframe-wrap iframe {
-      position: absolute;
-      top: 0; left: 0; width: 100%; height: 100%;
-      border: none;
-    }
-    h2 {
-      color: var(--apple-blue);
-      font-size: 1.5rem;
-      margin-top: 2.2rem;
-      margin-bottom: 0.75rem;
-      font-weight: 700;
-    }
-    ul {
-      padding-left: 1.2em;
-      margin-bottom: 1.5em;
-    }
-    li {
-      margin-bottom: 0.5em;
-      color: var(--apple-gray);
-    }
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
-    .feature-card {
-      flex: 1 1 220px;
-      background: var(--apple-light-gray);
-      border-radius: 10px;
-      padding: 1rem;
-      min-width: 180px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.03);
-      color: var(--apple-dark);
-    }
-    .feature-card span {
-      font-size: 1.5rem;
-      margin-right: 0.5rem;
-      vertical-align: middle;
-    }
-    .faq-section {
-      margin-top: 2.5rem;
-    }
-    .faq-q {
-      font-weight: 600;
-      color: var(--apple-dark);
-      margin-top: 1.2em;
-      margin-bottom: 0.3em;
-    }
-    .faq-a {
-      color: var(--apple-gray);
-      margin-bottom: 0.7em;
-    }
-    .advantages {
-      margin-top: 2.5rem;
-    }
-    .adv-title {
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: var(--apple-green);
-      margin-top: 1.2em;
-      margin-bottom: 0.3em;
-    }
-    .adv-desc {
-      color: var(--apple-gray);
-      margin-bottom: 0.7em;
-    }
-    footer {
-      background: var(--apple-dark);
-      color: #fff;
-      text-align: center;
-      padding: 2rem 1rem 1rem 1rem;
-      margin-top: 3rem;
-      font-size: 1rem;
-    }
-    .footer-links {
-      margin: 1rem 0 0.5rem 0;
-    }
-    .footer-links a {
-      color: #fff;
-      margin: 0 1rem;
-      text-decoration: underline;
-      font-size: 1rem;
-      opacity: 0.8;
-      transition: opacity 0.2s;
-    }
-    .footer-links a:hover {
-      opacity: 1;
-    }
-    @media (max-width: 700px) {
-      .main-content { padding: 1rem 0.3rem; }
-      .features { flex-direction: column; }
-      .logo { font-size: 1.3rem; }
-      .hero h1 { font-size: 2rem; }
-      header { flex-direction: column; height: auto; padding: 0.5rem 0.5rem; }
-      nav { margin-top: 0.5rem; }
-      nav a { margin-left: 1rem; font-size: 1rem; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knight Hero 2 Revenge - Play Free Online Idle RPG Game</title>
+    <meta name="description" content="Play Knight Hero 2 Revenge, an epic idle RPG adventure game online for free. Battle enemies, upgrade your knight, and embark on a legendary quest for revenge.">
+    <link rel="canonical" href="https://knighthero2.games/">
+    <style>
+        :root {
+            --apple-blue: #007AFF;
+            --apple-gray: #8E8E93;
+            --apple-light-gray: #F2F2F7;
+            --apple-dark: #1C1C1E;
+            --apple-green: #34C759;
+            --apple-orange: #FF9500;
+            --apple-red: #FF3B30;
+            --brand-color: #4A90E2; 
+        }
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--apple-light-gray);
+            color: var(--apple-dark);
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        header {
+            background: #fff;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 1rem 0;
+        }
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--brand-color);
+            text-decoration: none;
+        }
+        .main-nav a {
+            color: var(--apple-gray);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-weight: 500;
+        }
+        .main-nav a:hover {
+            color: var(--brand-color);
+        }
+        .game-section {
+            background: #fff;
+            padding: 2rem 0;
+            text-align: center;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .game-section h1 {
+            font-size: 2.5rem;
+            color: var(--apple-dark);
+            margin-bottom: 0.5rem;
+        }
+        .game-section .play-button {
+            background-color: var(--apple-green);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 0.8rem 2rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .game-section .play-button:hover {
+            background-color: #2aa34a;
+        }
+        .iframe-container {
+            width: 100%;
+            max-width: 900px;
+            margin: 2rem auto;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .iframe-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        }
+        .iframe-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .info-section {
+            background: #fff;
+            padding: 2rem 1rem;
+            margin-top: 2rem;
+            border-radius: 12px;
+        }
+        .info-section h2 {
+            font-size: 1.8rem;
+            color: var(--brand-color);
+            border-bottom: 2px solid var(--apple-light-gray);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .info-grid h3 {
+            font-size: 1.3rem;
+            color: var(--apple-dark);
+            margin-bottom: 0.5rem;
+        }
+        .info-grid p, .info-grid li {
+            color: var(--apple-gray);
+            line-height: 1.6;
+        }
+        .language-selector, .footer {
+            text-align: center;
+            padding: 2rem 0;
+        }
+        .language-selector select {
+            padding: 0.5rem;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+        footer {
+            background: var(--apple-dark);
+            color: #fff;
+        }
+        footer a {
+            color: #fff;
+            margin: 0 0.5rem;
+        }
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .main-nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .game-section h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div class="logo">Knight Hero 2 Revenge</div>
-    <nav>
-      <a href="#play" class="active">Play Game</a>
-      <a href="#about">About</a>
-      <a href="#features">Features</a>
-      <a href="#faq">FAQ</a>
-    </nav>
-  </header>
-  <section class="hero" id="play">
-    <h1>Knight Hero 2 Revenge</h1>
-    <p>Embark on an epic idle RPG adventure where honor meets vengeance in the ultimate knight's quest.</p>
-    <a href="#game-iframe"><button class="play-btn">Play Now - Free Online</button></a>
-  </section>
-  <main class="main-content">
-    <div class="iframe-wrap" id="game-iframe">
-      <iframe 
-        src="https://www.kizgame.com/en/splash/knight-hero-2-revenge-idle-rpg/"
-        title="Knight Hero 2 Revenge - Epic Idle RPG"
-        allowfullscreen
-        allow="fullscreen; autoplay; encrypted-media; web-share"
-      ></iframe>
-    </div>
-    <div style="text-align: center; margin-top: -1rem; margin-bottom: 2rem;">
-      <a 
-        href="https://www.kizgame.com/en/splash/knight-hero-2-revenge-idle-rpg/" 
-        target="_blank" 
-        style="display: inline-block; padding: 0.8rem 1.8rem; background-color: var(--apple-green); color: white; font-weight: 600; text-decoration: none; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"
-      >
-        Fullscreen (New Window)
-      </a>
-    </div>
-    <h2 id="about">About the Game</h2>
-    <p>
-      Knight Hero 2 Revenge is a thrilling idle RPG adventure game where you take on the role of a valiant knight seeking justice and glory. Battle formidable enemies, upgrade your skills and equipment, and progress even while you are away. Enjoy a seamless experience on both PC and mobile devices, with a design inspired by Apple's iconic color palette.
-    </p>
-    <h2 id="features">Key Features</h2>
-    <div class="features">
-      <div class="feature-card"><span>⚔️</span> Strategic combat system for all skill levels</div>
-      <div class="feature-card"><span>📈</span> Deep character progression and upgrades</div>
-      <div class="feature-card"><span>🏰</span> Epic quests and immersive storyline</div>
-      <div class="feature-card"><span>💎</span> Idle rewards even when offline</div>
-      <div class="feature-card"><span>🛡️</span> Collect and enhance powerful equipment</div>
-      <div class="feature-card"><span>🌟</span> Achievements and milestones to unlock</div>
-    </div>
-    <h2 id="faq">Frequently Asked Questions</h2>
-    <div class="faq-section">
-      <div class="faq-q">Is Knight Hero 2 Revenge free to play?</div>
-      <div class="faq-a">Yes! Knight Hero 2 Revenge is completely free to play online. Simply click the play button and start your adventure immediately.</div>
-      <div class="faq-q">Do I need to download anything?</div>
-      <div class="faq-a">No downloads required! The game runs directly in your web browser on both desktop and mobile devices.</div>
-      <div class="faq-q">What devices can I play on?</div>
-      <div class="faq-a">Knight Hero 2 Revenge is optimized for both PC and mobile devices. Play on Windows, Mac, iOS, Android, or any device with a modern web browser.</div>
-      <div class="faq-q">How does the idle system work?</div>
-      <div class="faq-a">The idle system allows your knight to continue battling and earning rewards even when you're not actively playing, making progress accessible for all play styles.</div>
-    </div>
-    <div class="advantages">
-      <div class="adv-title">Simple Gameplay</div>
-      <div class="adv-desc">The game's mechanics are easy to understand, making it accessible to players of all ages and skill levels. All you need to do is control your knight, collect rewards, and upgrade your hero.</div>
-      <div class="adv-title">No Installation Required</div>
-      <div class="adv-desc">Knight Hero 2 Revenge is free to play and doesn’t require any downloads or installations. You can access it directly from your browser.</div>
-      <div class="adv-title">Engages Focus</div>
-      <div class="adv-desc">The game requires quick reflexes and strategic thinking as you progress. This helps players improve their hand-eye coordination and planning skills.</div>
-      <div class="adv-title">Idle Progression</div>
-      <div class="adv-desc">Your knight continues to grow stronger and earn rewards even when you are offline, making it perfect for busy players.</div>
-      <div class="adv-title">Cross-Platform</div>
-      <div class="adv-desc">Enjoy a seamless experience on both desktop and mobile devices, with a responsive design and smooth gameplay.</div>
-    </div>
-  </main>
-  <footer>
-    <div>Knight Hero 2 Revenge © 2024. All rights reserved.</div>
-    <div class="footer-links">
-      <a href="#play">Play Game</a> |
-      <a href="#about">About</a> |
-      <a href="#features">Features</a> |
-      <a href="#faq">FAQ</a> |
-      <a href="#">Privacy Policy</a>
-    </div>
-    <div style="margin-top:0.5rem; color:var(--apple-gray); font-size:0.95rem;">
-      This site is a fan-made project inspired by <a href="https://snakegame.org/" style="color:#fff;text-decoration:underline;">snakegame.org</a>.
-    </div>
-  </footer>
+
+    <header>
+        <div class="container header-content">
+            <a href="/" class="logo">KnightHero2.games</a>
+            <nav class="main-nav">
+                <a href="#how-to-play">How to Play</a>
+                <a href="#faq">FAQ</a>
+                <a href="#about">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="game-section">
+            <div class="container">
+                <h1>Knight Hero 2: Revenge - Idle RPG</h1>
+                <p>Click the "Play" button to start your epic adventure!</p>
+                <div class="iframe-container">
+                    <div class="iframe-wrapper">
+                        <iframe src="https://www.kizgame.com/en/splash/knight-hero-2-revenge-idle-rpg/" title="Knight Hero 2 Revenge Game" allowfullscreen></iframe>
+                    </div>
+                </div>
+                 <a href="https://www.kizgame.com/en/splash/knight-hero-2-revenge-idle-rpg/" target="_blank" class="play-button">Play Fullscreen</a>
+            </div>
+        </section>
+
+        <div class="container info-section" id="how-to-play">
+            <h2>How to Play Knight Hero 2: Revenge?</h2>
+            <div class="info-grid">
+                <div>
+                    <h3>Start the Game</h3>
+                    <p>Click the "Play" button above. The game will load directly in the frame. Click inside the game to start your quest.</p>
+                </div>
+                <div>
+                    <h3>Control Your Hero</h3>
+                    <p>The game features idle mechanics. Your hero will fight automatically. Your main role is to manage upgrades, skills, and equipment to make your hero stronger.</p>
+                </div>
+                <div>
+                    <h3>Progress and Upgrade</h3>
+                    <p>Collect gold and resources from fallen enemies. Use them to upgrade your knight's armor, weapons, and special abilities. Unlock new areas and face tougher bosses as you advance.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container info-section" id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="info-grid">
+                <div>
+                    <p><strong>How do I start the game?</strong><br>
+                    It's simple! Just go to knighthero2.games and click the "Play" button to start the game right in your browser.</p>
+                </div>
+                 <div>
+                    <p><strong>What are the controls?</strong><br>
+                    The game is an idle RPG, so most combat is automatic. You'll use your mouse to navigate menus, apply upgrades, and choose skills.</p>
+                </div>
+                 <div>
+                    <p><strong>How does my hero get stronger?</strong><br>
+                    Your hero grows by defeating enemies and earning resources. Use these resources to purchase upgrades for gear and abilities, which permanently increases your power.</p>
+                </div>
+                 <div>
+                    <p><strong>What happens if I close the browser?</strong><br>
+                    Thanks to the idle mechanics, your hero continues to fight and earn rewards even when you're not playing. Come back later to collect your earnings!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container info-section">
+            <h2>Advantages of Knight Hero 2: Revenge</h2>
+             <div class="info-grid">
+                <div>
+                    <h3>Simple Gameplay</h3>
+                    <p>The game's idle mechanics are easy to understand, making it accessible for everyone. Just focus on strategy and upgrades.</p>
+                </div>
+                 <div>
+                    <h3>No Installation Required</h3>
+                    <p>This game is free to play and requires no downloads. You can access it directly from your browser anytime.</p>
+                </div>
+                 <div>
+                    <h3>Engaging Progression</h3>
+                    <p>The game requires strategic thinking to optimize your upgrades. It helps improve your long-term planning skills.</p>
+                </div>
+                <div>
+                    <h3>Offline Play</h3>
+                    <p>Your hero works for you 24/7. This makes it a great game to enjoy without constant attention.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="language-selector">
+             <h2>Select Language</h2>
+             <select>
+                 <option>English (US)</option>
+                 <option disabled>Español (Coming Soon)</option>
+                 <option disabled>Français (Coming Soon)</option>
+             </select>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>KnightHero2.games © 2024 All rights reserved</p>
+            <p>
+                <a href="#about">About</a> |
+                <a href="#">Feedback</a> |
+                <a href="#">Privacy Policy</a>
+            </p>
+        </div>
+    </footer>
+
 </body>
 </html>
