@@ -6,269 +6,548 @@
     <title>Knight Hero 2 Revenge - Play Free Online Idle RPG Game</title>
     <meta name="description" content="Play Knight Hero 2 Revenge, an epic idle RPG adventure game online for free. Battle enemies, upgrade your knight, and embark on a legendary quest for revenge.">
     <link rel="canonical" href="https://knighthero2.games/">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --apple-blue: #007AFF;
-            --apple-gray: #8E8E93;
-            --apple-light-gray: #F2F2F7;
-            --apple-dark: #1C1C1E;
-            --apple-green: #34C759;
-            --apple-orange: #FF9500;
-            --apple-red: #FF3B30;
-            --brand-color: #4A90E2; 
+            --bg-color: #F8F5F2;
+            --card-bg-color: #FFFFFF;
+            --primary-color: #6A4C93; /* Purple */
+            --secondary-color: #8AC926; /* Green */
+            --text-color: #4A4A4A;
+            --text-light-color: #8A8A8A;
+            --border-color: #EAEAEA;
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
         html, body {
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: var(--apple-light-gray);
-            color: var(--apple-dark);
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
         }
         .container {
-            max-width: 1100px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 0 1rem;
+            padding: 1rem;
         }
-        header {
-            background: #fff;
-            border-bottom: 1px solid #e5e7eb;
-            padding: 1rem 0;
-        }
-        .header-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--brand-color);
-            text-decoration: none;
-        }
-        .main-nav a {
-            color: var(--apple-gray);
-            text-decoration: none;
-            margin-left: 1.5rem;
-            font-weight: 500;
-        }
-        .main-nav a:hover {
-            color: var(--brand-color);
-        }
-        .game-section {
-            background: #fff;
-            padding: 2rem 0;
+        .card {
+            background: var(--card-bg-color);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
             text-align: center;
-            border-bottom: 1px solid #e5e7eb;
         }
-        .game-section h1 {
-            font-size: 2.5rem;
-            color: var(--apple-dark);
-            margin-bottom: 0.5rem;
-        }
-        .game-section .play-button {
-            background-color: var(--apple-green);
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            padding: 0.8rem 2rem;
-            font-size: 1.2rem;
+        h1, h2, h3 {
+            color: var(--primary-color);
             font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.3s;
         }
-        .game-section .play-button:hover {
-            background-color: #2aa34a;
-        }
+        h1 { font-size: 2.2rem; }
+        h2 { font-size: 1.8rem; margin: 2rem 0 1.5rem; }
+        
+        /* Game Section */
         .iframe-container {
             width: 100%;
-            max-width: 900px;
-            margin: 2rem auto;
+            margin: 1.5rem 0;
             background: #000;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
         .iframe-wrapper {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            padding-bottom: 56.25%; /* 16:9 */
         }
         .iframe-wrapper iframe {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0; width: 100%; height: 100%;
             border: 0;
         }
-        .info-section {
-            background: #fff;
-            padding: 2rem 1rem;
-            margin-top: 2rem;
+        .play-button {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 0.7rem 1.8rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .play-button:hover { background-color: #76b321; }
+        
+        /* How to Play */
+        .how-to-play-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            text-align: left;
+        }
+        .step {
+            display: flex;
+            align-items: flex-start;
+        }
+        .step-number {
+            background-color: var(--secondary-color);
+            color: #fff;
+            font-weight: 600;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        /* FAQ */
+        .faq-item {
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            margin-bottom: 0.8rem;
+            text-align: left;
+            overflow: hidden;
+        }
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-color);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-question::after {
+            content: '▼';
+            font-size: 0.8rem;
+            transition: transform 0.3s;
+        }
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            line-height: 1.6;
+            color: var(--text-light-color);
+            display: none;
+        }
+        .faq-item.active .faq-answer { display: block; }
+        .faq-item.active .faq-question::after { transform: rotate(180deg); }
+        
+        /* Advantages */
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        .advantage-card {
+            background: var(--bg-color);
+            padding: 1.5rem;
             border-radius: 12px;
         }
-        .info-section h2 {
-            font-size: 1.8rem;
-            color: var(--brand-color);
-            border-bottom: 2px solid var(--apple-light-gray);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1rem;
+        .advantage-card h3 {
+            font-size: 1.1rem;
+            margin-top: 0;
         }
-        .info-grid {
+        
+        /* Languages & Footer */
+        .language-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            justify-content: center;
         }
-        .info-grid h3 {
-            font-size: 1.3rem;
-            color: var(--apple-dark);
-            margin-bottom: 0.5rem;
+        .lang-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.6rem;
+            background-color: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            cursor: pointer;
+            opacity: 0.7;
         }
-        .info-grid p, .info-grid li {
-            color: var(--apple-gray);
-            line-height: 1.6;
+        .lang-button.active {
+            opacity: 1;
+            border-color: var(--secondary-color);
         }
-        .language-selector, .footer {
-            text-align: center;
-            padding: 2rem 0;
-        }
-        .language-selector select {
-            padding: 0.5rem;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-        }
+        .lang-button img { width: 24px; margin-right: 0.5rem; }
         footer {
-            background: var(--apple-dark);
-            color: #fff;
+            padding: 2rem 1rem;
+            color: var(--text-light-color);
+            text-align: center;
+            font-size: 0.9rem;
         }
-        footer a {
-            color: #fff;
-            margin: 0 0.5rem;
+        footer a { color: var(--text-color); }
+
+        /* 新增CSS样式 */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.2rem;
+            text-align: left;
         }
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                gap: 1rem;
+        .tip-card {
+            background: #f8f5f2;
+            border-radius: 14px;
+            padding: 1.2rem 1rem;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            transition: box-shadow 0.2s, transform 0.2s;
+            display: block;
+            cursor: pointer;
+        }
+        .tip-card:hover {
+            box-shadow: 0 6px 24px rgba(106,76,147,0.13);
+            background: #fff;
+            transform: translateY(-2px) scale(1.03);
+        }
+        .tip-emoji {
+            font-size: 2rem;
+            margin-bottom: 0.3rem;
+        }
+        .tip-desc {
+            font-size: 0.98rem;
+            color: #8A8A8A;
+            margin-top: 0.5rem;
+        }
+
+        /* 新增Other Games样式 */
+        .other-games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.2rem;
+            justify-items: center;
+        }
+        .other-game-card {
+            background: #f8f5f2;
+            border-radius: 14px;
+            padding: 1.2rem 1rem 1rem 1rem;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            transition: box-shadow 0.2s, transform 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            min-height: 180px;
+        }
+        .other-game-card:hover {
+            box-shadow: 0 6px 24px rgba(106,76,147,0.13);
+            background: #fff;
+            transform: translateY(-2px) scale(1.03);
+        }
+        .other-game-img {
+            width: 64px;
+            height: 64px;
+            border-radius: 12px;
+            margin-bottom: 0.8rem;
+            background: #fff;
+            object-fit: contain;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+        }
+        .other-game-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #6A4C93;
+            text-align: center;
+            margin-top: 0.2rem;
+        }
+
+        /* 新增Other Games新版样式 */
+        .other-games-title {
+            display: inline-block;
+            background: #eaf7d6;
+            color: #49513d;
+            font-size: 2rem;
+            font-weight: 700;
+            border-radius: 1.5rem 1.5rem 1.5rem 1.5rem/2.5rem 2.5rem 2rem 2rem;
+            padding: 0.5rem 2.5rem 0.4rem 2.5rem;
+            margin: 0 auto 2rem auto;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+        .other-games-flex {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 1.5rem;
+            justify-items: center;
+        }
+        .other-game-row {
+            display: flex;
+            align-items: center;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            padding: 1.1rem 1.5rem 1.1rem 1.1rem;
+            text-decoration: none;
+            color: inherit;
+            min-width: 320px;
+            max-width: 420px;
+            width: 100%;
+            transition: box-shadow 0.2s, transform 0.2s;
+            margin-bottom: 0.2rem;
+        }
+        .other-game-row:hover {
+            box-shadow: 0 8px 32px rgba(106,76,147,0.13);
+            background: #f8f5f2;
+            transform: translateY(-2px) scale(1.03);
+        }
+        .other-game-row-imgwrap {
+            flex-shrink: 0;
+            width: 64px;
+            height: 64px;
+            background: #f8f5f2;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1.2rem;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+        }
+        .other-game-row-img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+        .other-game-row-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .other-game-row-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #6A4C93;
+            margin-bottom: 0.2rem;
+        }
+        .other-game-row-desc {
+            font-size: 1rem;
+            color: #4A4A4A;
+            opacity: 0.85;
+        }
+        @media (max-width: 600px) {
+            .other-games-flex {
+                grid-template-columns: 1fr;
             }
-            .main-nav {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            .game-section h1 {
-                font-size: 2rem;
+            .other-game-row {
+                min-width: 0;
+                max-width: 100%;
+                padding: 1rem 0.7rem 1rem 0.7rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="container header-content">
-            <a href="/" class="logo">KnightHero2.games</a>
-            <nav class="main-nav">
-                <a href="#how-to-play">How to Play</a>
-                <a href="#faq">FAQ</a>
-                <a href="#about">About</a>
-            </nav>
+    <div class="container">
+        <div class="card">
+            <h1>Knight Hero 2: Revenge</h1>
+            <p>Test your skills in this epic idle RPG adventure!</p>
+            <div class="iframe-container">
+                <div class="iframe-wrapper">
+                    <iframe src="https://www.kizgame.com/en/splash/knight-hero-2-revenge-idle-rpg/" title="Knight Hero 2 Revenge Game"></iframe>
+                </div>
+            </div>
         </div>
-    </header>
 
-    <main>
-        <section class="game-section">
-            <div class="container">
-                <h1>Knight Hero 2: Revenge - Idle RPG</h1>
-                <p>Click the "Play" button to start your epic adventure!</p>
-                <div class="iframe-container">
-                    <div class="iframe-wrapper">
-                        <iframe src="https://www.kizgame.com/en/splash/knight-hero-2-revenge-idle-rpg/" title="Knight Hero 2 Revenge Game" allowfullscreen></iframe>
+        <!-- Knight Hero 2: Revenge Tips & Tricks -->
+        <div class="card" style="padding-top:0.5rem;">
+            <h2 style="background:#fff3f0;color:#6A4C93;padding:0.5rem 1.5rem;border-radius:1.5rem;display:inline-block;font-size:1.3rem;margin-bottom:1.5rem;">Knight Hero 2: Revenge Tips & Tricks</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-emoji">💰</div>
+                    <strong>Resource Farming</strong>
+                    <div class="tip-desc">Farm lower levels to accumulate gold and gear, preparing for tougher battles ahead.</div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-emoji">⚔️</div>
+                    <strong>Smart Upgrades</strong>
+                    <div class="tip-desc">Prioritize upgrading skills and equipment that match your playstyle. Balanced stats help you survive boss fights.</div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-emoji">🏃‍♂️</div>
+                    <strong>Agile Movement</strong>
+                    <div class="tip-desc">Use your hero’s agility to dodge enemy attacks and minimize unnecessary damage.</div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-emoji">💥</div>
+                    <strong>Skill Burst</strong>
+                    <div class="tip-desc">Unleash your ultimate skills at key moments to quickly defeat bosses or large groups of enemies.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Knight Hero Adventure: Idle RPG</h2>
+            <p>Another epic adventure awaits!</p>
+            <div class="iframe-container">
+                <div class="iframe-wrapper">
+                    <iframe 
+                        id="gameframe2"
+                        src="https://www.crazygames.com/embed/knight-hero-adventure-idle-rpg/"
+                        frameborder="0"
+                        style="border: none"
+                        scrolling="no"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- Knight Hero Adventure: Idle RPG Tips & Tricks -->
+        <div class="card" style="padding-top:0.5rem;">
+            <h2 style="background:#fff3f0;color:#6A4C93;padding:0.5rem 1.5rem;border-radius:1.5rem;display:inline-block;font-size:1.3rem;margin-bottom:1.5rem;">Knight Hero Adventure: Idle RPG Tips & Tricks</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-emoji">🤖</div>
+                    <strong>Auto Battle</strong>
+                    <div class="tip-desc">Take advantage of the auto-battle system to earn experience and rewards even while idle.</div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-emoji">🛡️</div>
+                    <strong>Prioritize Equipment</strong>
+                    <div class="tip-desc">New equipment greatly boosts your stats. Always seek and upgrade high-quality gear.</div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-emoji">🎯</div>
+                    <strong>Skill Allocation</strong>
+                    <div class="tip-desc">Adjust your skill points based on stage difficulty and enemy types for maximum efficiency.</div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-emoji">🎁</div>
+                    <strong>Daily Quests</strong>
+                    <div class="tip-desc">Complete daily quests and achievements for valuable rewards and faster progression.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="how-to-play">
+            <h2>How to Play Knight Hero 2?</h2>
+            <div class="how-to-play-grid">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div>
+                        <h3>Start the Game</h3>
+                        <p>The game will load in the frame above. Click inside the game area to start your quest.</p>
                     </div>
                 </div>
-                 <a href="https://www.kizgame.com/en/splash/knight-hero-2-revenge-idle-rpg/" target="_blank" class="play-button">Play Fullscreen</a>
-            </div>
-        </section>
-
-        <div class="container info-section" id="how-to-play">
-            <h2>How to Play Knight Hero 2: Revenge?</h2>
-            <div class="info-grid">
-                <div>
-                    <h3>Start the Game</h3>
-                    <p>Click the "Play" button above. The game will load directly in the frame. Click inside the game to start your quest.</p>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div>
+                        <h3>Control Your Hero</h3>
+                        <p>The game is an idle RPG. Your hero fights automatically. You just need to manage skills and upgrades.</p>
+                    </div>
                 </div>
-                <div>
-                    <h3>Control Your Hero</h3>
-                    <p>The game features idle mechanics. Your hero will fight automatically. Your main role is to manage upgrades, skills, and equipment to make your hero stronger.</p>
-                </div>
-                <div>
-                    <h3>Progress and Upgrade</h3>
-                    <p>Collect gold and resources from fallen enemies. Use them to upgrade your knight's armor, weapons, and special abilities. Unlock new areas and face tougher bosses as you advance.</p>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div>
+                        <h3>Avoid Obstacles</h3>
+                        <p>As you progress, you'll face tougher enemies. Strategically upgrade your gear to overcome them.</p>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="container info-section" id="faq">
+        <!-- Other Games Section -->
+        <div class="card" style="padding-top:0.5rem;background:none;box-shadow:none;">
+            <div class="other-games-title">Play Other Games</div>
+            <div class="other-games-flex">
+                <a class="other-game-row" href="https://brainrotmerge.pro/index.html" target="_blank">
+                    <div class="other-game-row-imgwrap">
+                        <img src="https://avatars.mds.yandex.net/get-games/13012056/2a00000196b4b1765d09bf97220c111e6490/pjpg160x160" alt="Brainrot Merge" class="other-game-row-img">
+                    </div>
+                    <div class="other-game-row-info">
+                        <div class="other-game-row-title">Brainrot Merge</div>
+                        <div class="other-game-row-desc">Merge items and challenge your brain in Brainrot Merge!</div>
+                    </div>
+                </a>
+                <a class="other-game-row" href="https://blockbreakergame.games/" target="_blank">
+                    <div class="other-game-row-imgwrap">
+                        <img src="https://snakegame.org/assets/img/block-breaker-play.png" alt="Block Breaker" class="other-game-row-img">
+                    </div>
+                    <div class="other-game-row-info">
+                        <div class="other-game-row-title">Block Breaker</div>
+                        <div class="other-game-row-desc">Play the classic Block Breaker arcade game online.</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="card" id="faq">
             <h2>Frequently Asked Questions</h2>
-            <div class="info-grid">
-                <div>
-                    <p><strong>How do I start the game?</strong><br>
-                    It's simple! Just go to knighthero2.games and click the "Play" button to start the game right in your browser.</p>
-                </div>
-                 <div>
-                    <p><strong>What are the controls?</strong><br>
-                    The game is an idle RPG, so most combat is automatic. You'll use your mouse to navigate menus, apply upgrades, and choose skills.</p>
-                </div>
-                 <div>
-                    <p><strong>How does my hero get stronger?</strong><br>
-                    Your hero grows by defeating enemies and earning resources. Use these resources to purchase upgrades for gear and abilities, which permanently increases your power.</p>
-                </div>
-                 <div>
-                    <p><strong>What happens if I close the browser?</strong><br>
-                    Thanks to the idle mechanics, your hero continues to fight and earn rewards even when you're not playing. Come back later to collect your earnings!</p>
-                </div>
+            <div class="faq-item">
+                <button class="faq-question">How do I start the game?</button>
+                <div class="faq-answer">It's simple! Just go to knighthero2.games and click the "Play Fullscreen" button.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">What are the controls?</button>
+                <div class="faq-answer">Combat is automatic. Use your mouse to navigate menus, apply upgrades, and choose skills.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">How does my hero get stronger?</button>
+                <div class="faq-answer">By defeating enemies and earning resources. Use them to purchase upgrades for gear and abilities.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">What happens if I close the browser?</button>
+                <div class="faq-answer">Your hero continues to fight and earn rewards even when you're not playing!</div>
             </div>
         </div>
 
-        <div class="container info-section" id="about">
-            <h2>Advantages of Knight Hero 2: Revenge</h2>
-             <div class="info-grid">
-                <div>
+        <div class="card">
+            <h2>Advantages of the Game</h2>
+            <div class="advantages-grid">
+                <div class="advantage-card">
                     <h3>Simple Gameplay</h3>
-                    <p>The game's idle mechanics are easy to understand, making it accessible for everyone. Just focus on strategy and upgrades.</p>
+                    <p>Easy-to-understand idle mechanics make it accessible for everyone.</p>
                 </div>
-                 <div>
+                <div class="advantage-card">
                     <h3>No Installation Required</h3>
-                    <p>This game is free to play and requires no downloads. You can access it directly from your browser anytime.</p>
+                    <p>Free to play directly from your browser with no downloads needed.</p>
                 </div>
-                 <div>
+                <div class="advantage-card">
                     <h3>Engaging Progression</h3>
-                    <p>The game requires strategic thinking to optimize your upgrades. It helps improve your long-term planning skills.</p>
+                    <p>Requires strategic thinking to optimize your upgrades and progress.</p>
                 </div>
-                <div>
+                <div class="advantage-card">
+                    <h3>Nostalgic Feel</h3>
+                    <p>A modern take on classic RPGs, offering a fun, retro gaming experience.</p>
+                </div>
+                <div class="advantage-card">
                     <h3>Offline Play</h3>
-                    <p>Your hero works for you 24/7. This makes it a great game to enjoy without constant attention.</p>
+                    <p>Your hero works for you 24/7, making it perfect for busy players.</p>
+                </div>
+                <div class="advantage-card">
+                    <h3>Customizable Gear</h3>
+                    <p>Personalize your hero with a wide variety of weapons and armor.</p>
                 </div>
             </div>
         </div>
         
-        <div class="language-selector">
-             <h2>Select Language</h2>
-             <select>
-                 <option>English (US)</option>
-                 <option disabled>Español (Coming Soon)</option>
-                 <option disabled>Français (Coming Soon)</option>
-             </select>
-        </div>
-    </main>
-
+    </div>
+    
     <footer>
-        <div class="container">
-            <p>KnightHero2.games © 2024 All rights reserved</p>
-            <p>
-                <a href="#about">About</a> |
-                <a href="#">Feedback</a> |
-                <a href="#">Privacy Policy</a>
-            </p>
-        </div>
+        KnightHero2.games © 2024 All rights reserved | 
+        <a href="#">About</a> | 
+        <a href="#">Feedback</a> | 
+        <a href="#">Privacy Policy</a>
     </footer>
 
+    <script>
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
 </html>
